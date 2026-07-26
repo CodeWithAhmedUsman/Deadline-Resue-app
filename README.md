@@ -10,7 +10,7 @@ Students often lose marks not because they do not care, but because they panic n
 
 Add your deployed link here after publishing:
 
-https://your-vercel-project-url.vercel.app
+(https://tangerine-meringue-43eb9a.netlify.app/)
 
 ## Features
 
