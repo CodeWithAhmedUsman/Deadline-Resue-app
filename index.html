@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadline Rescue</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="Deadline Rescue workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Student deadline planner</p>
+            <h1>Deadline Rescue</h1>
+          </div>
+          <div class="status-pill" id="aiStatus">AI ready</div>
+        </header>
+
+        <section class="hero-band">
+          <div>
+            <h2>Turn a scary deadline into a calm work plan.</h2>
+            <p>
+              Add your assignment, deadline, available hours, and current progress.
+              The planner creates a step-by-step schedule with priorities, break
+              points, and a realistic final-check routine.
+            </p>
+          </div>
+          <div class="today-card">
+            <span>Today</span>
+            <strong id="todayLabel">Loading...</strong>
+          </div>
+        </section>
+
+        <section class="layout-grid">
+          <form class="planner-panel" id="plannerForm">
+            <div class="section-title">
+              <h3>Assignment Details</h3>
+              <p>Keep it honest. The plan gets better when the inputs are real.</p>
+            </div>
+
+            <label>
+              Assignment title
+              <input id="title" name="title" value="Final Project - Ship Your AI App" required />
+            </label>
+
+            <label>
+              What do you need to submit?
+              <textarea id="description" name="description" rows="4" required>Public GitHub repository, live deployed app URL, README report, screenshots, and an AI-powered feature.</textarea>
+            </label>
+
+            <div class="field-row">
+              <label>
+                Deadline
+                <input id="deadline" name="deadline" type="datetime-local" required />
+              </label>
+              <label>
+                Timezone
+                <input id="timezone" name="timezone" value="PKT" required />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Hours available
+                <input id="hours" name="hours" type="number" min="1" max="72" value="14" required />
+              </label>
+              <label>
+                Current progress
+                <select id="progress" name="progress">
+                  <option>Only idea</option>
+                  <option selected>Some notes</option>
+                  <option>Prototype started</option>
+                  <option>Mostly built</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Your energy level
+              <select id="energy" name="energy">
+                <option>Low</option>
+                <option selected>Medium</option>
+                <option>High</option>
+              </select>
+            </label>
+
+            <label>
+              Biggest worry
+              <input id="worry" name="worry" value="Finishing the app and README before the deadline" />
+            </label>
+
+            <button class="primary-action" type="submit">
+              <span aria-hidden="true">OK</span>
+              Generate rescue plan
+            </button>
+          </form>
+
+          <section class="results-panel" aria-live="polite">
+            <div class="section-title">
+              <h3>Rescue Plan</h3>
+              <p id="planSubtitle">Your plan will appear here.</p>
+            </div>
+
+            <div class="output-box" id="output">
+              <div class="empty-state">
+                <strong>No plan yet</strong>
+                <span>Fill the form and generate a plan. You can edit the details anytime.</span>
+              </div>
+            </div>
+
+            <div class="quick-tools">
+              <button type="button" id="copyBtn">Copy plan</button>
+              <button type="button" id="sampleBtn">Load sample project</button>
+              <button type="button" id="clearBtn">Clear</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="feature-strip" aria-label="App features">
+          <article>
+            <strong>Priority map</strong>
+            <span>Finds the highest-value tasks first.</span>
+          </article>
+          <article>
+            <strong>Time blocks</strong>
+            <span>Splits work into realistic sessions.</span>
+          </article>
+          <article>
+            <strong>Submission check</strong>
+            <span>Reminds you what graders will test.</span>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
