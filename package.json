@@ -1,0 +1,18 @@
+﻿{
+  "name": "deadline-rescue",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An AI-powered assignment planning app for students with urgent deadlines.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "student",
+    "planner",
+    "ai",
+    "assignments"
+  ],
+  "author": "",
+  "license": "MIT"
+}
